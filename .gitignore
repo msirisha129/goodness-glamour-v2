@@ -43,3 +43,10 @@ config_template.env
 qr_voice_trigger_system.py
 setup_env.py
 setup_ngrok_quick.py
+
+ai_voice_booking_assistant.py
+enhanced_voice_assistant.py
+setup_env.py
+simple_voice_test.py
+voice_agent.py
+*.py
