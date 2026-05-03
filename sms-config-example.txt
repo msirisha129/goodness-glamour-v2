@@ -1,0 +1,34 @@
+# ==================== SMS CONFIGURATION EXAMPLES ====================
+# Copy the relevant section to your .env file
+
+# ==================== OPTION 1: TextLocal (Recommended for India) ====================
+# Very cheap, excellent India coverage
+# Sign up at: https://www.textlocal.in/
+TEXTLOCAL_API_KEY=your_textlocal_api_key_here
+TEXTLOCAL_SENDER=GLAMOR
+
+# ==================== OPTION 2: MSG91 (Alternative for India) ====================
+# Good alternative with reliable service
+# Sign up at: https://msg91.com/
+MSG91_API_KEY=your_msg91_api_key_here
+MSG91_SENDER_ID=GLAMOR
+
+# ==================== OPTION 3: Twilio (Global but Expensive) ====================
+# Most reliable but costs more
+# Sign up at: https://www.twilio.com/
+TWILIO_ACCOUNT_SID=your_twilio_account_sid_here
+TWILIO_AUTH_TOKEN=your_twilio_auth_token_here
+TWILIO_FROM_NUMBER=+1234567890
+
+# ==================== OPTION 4: Generic SMS Gateway ====================
+# If you have another SMS provider
+SMS_GATEWAY_URL=https://your-gateway.com/api/send
+SMS_GATEWAY_API_KEY=your_gateway_api_key_here
+SMS_GATEWAY_SENDER=GLAMOR
+
+# ==================== NOTES ====================
+# 1. You only need ONE provider configured
+# 2. TextLocal is recommended for India-based customers
+# 3. Phone numbers should be in format: +91xxxxxxxxxx
+# 4. Restart server after adding SMS configuration
+# 5. Test with: node test-sms.js +91xxxxxxxxxx

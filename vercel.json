@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "buildCommand": "npm install && cd client && npm install && node node_modules/vite/bin/vite.js build",
+  "outputDirectory": "client/dist",
+  "installCommand": "npm install --include=dev",
+  "builds": [
+    {
+      "src": "server/index.ts",
+      "use": "@vercel/node",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "maxDuration": 30
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/server/index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/client/dist/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

@@ -1,0 +1,22 @@
+# Netlify configuration
+[build]
+  command = "cd client && npm ci && npm run build"
+  publish = "client/dist"
+  functions = "netlify/functions"
+
+# Proxy API routes to Netlify Functions
+[[redirects]]
+  from = "/api/services"
+  to = "/.netlify/functions/services"
+  status = 200
+
+[[redirects]]
+  from = "/api/bookings"
+  to = "/.netlify/functions/bookings"
+  status = 200
+
+# Runtime config for client
+[[redirects]]
+  from = "/config.js"
+  to = "/.netlify/functions/config"
+  status = 200

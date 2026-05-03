@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: virtual-ai-salon
+    env: node
+    nodeVersion: "20"
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    # Render sets PORT automatically; app must bind to 0.0.0.0
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Optional keys; set values in Render Dashboard or secrets
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      # Email Configuration (Required for email services)
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASSWORD
+        sync: false
+      # Alternative SMTP Configuration (optional, for custom SMTP servers)
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      # Database (Neon/PostgreSQL - required for persistent data)
+      - key: DATABASE_URL
+        sync: false
