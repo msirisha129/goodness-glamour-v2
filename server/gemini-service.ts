@@ -186,11 +186,11 @@ Remember: You are a knowledgeable AI assistant who can help with any topic. When
 `;
 
 // Initialize Gemini AI
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "AIzaSyCwBOJxDpGGd0-WhLD6_h2r2YalSCygKSU");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "AIzaSyDEw4nW0xV_FQKf1SUX9fFJwnEY5n8_Jwc");
 
 // Create model with salon context
 const model = genAI.getGenerativeModel({
-  model:  "gemini-2.0-flash",
+  model: "gemini-2.0-flash-exp",
   systemInstruction: SALON_CONTEXT,
   generationConfig: {
     maxOutputTokens: 2048,
