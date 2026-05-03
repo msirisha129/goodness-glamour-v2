@@ -50,3 +50,5 @@ setup_env.py
 simple_voice_test.py
 voice_agent.py
 *.py
+
+config_template.env
