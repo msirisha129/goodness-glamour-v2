@@ -37,3 +37,9 @@ data/*.xlsx
 .env
 
 .env
+
+ai_voice_booking_assistant.py
+config_template.env
+qr_voice_trigger_system.py
+setup_env.py
+setup_ngrok_quick.py
