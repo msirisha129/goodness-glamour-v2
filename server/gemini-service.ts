@@ -285,3 +285,5 @@ export async function testGeminiConnection(): Promise<boolean> {
     console.error("❌ Gemini AI connection failed:", error);
     return false;
   }
+}
+
