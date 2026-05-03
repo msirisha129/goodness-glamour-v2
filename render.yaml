@@ -4,7 +4,7 @@ services:
     env: node
     nodeVersion: "20"
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm ci && npm run build:client && npm run build:server && esbuild server/index.ts --bundle --platform=node --packages=external --outdir=dist --external:@neondatabase/serverless
     startCommand: npm start
     # Render sets PORT automatically; app must bind to 0.0.0.0
     autoDeploy: true
